@@ -39,6 +39,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        mNavController.navigate(R.id.itemDetailsFragment);
+        mNavController.navigate(R.id.historyFragment);
     }
 }
