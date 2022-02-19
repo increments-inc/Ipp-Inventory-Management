@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">IPP Inventory Management</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bm_history">History</string>
+    <string name="bm_storage">Storage</string>
+    <string name="des_scanner">Barcode Scanner to Find Item</string>
+    <string name="home_page_hint">Press scan button to start scanning</string>
+    <string name="barcode">Barcode</string>
+    <string name="productName">Product Name</string>
+    <string name="productDesLorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
 </resources>
