@@ -31,7 +31,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/productDetailsCardView"
             android:layout_width="match_parent"
-            android:layout_height="550dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="1dp"
@@ -50,7 +50,8 @@
                     android:text="@string/barcode"
                     android:textColor="@color/navy_blue"
                     android:textSize="16sp"
-                    app:drawableStartCompat="@drawable/ic_barcode_outline" />
+                    app:drawableStartCompat="@drawable/ic_barcode_outline"
+                    app:drawableTint="@color/navy_blue" />
 
                 <ImageView
                     android:id="@+id/imgBarcode"
@@ -59,7 +60,7 @@
                     android:layout_marginTop="8dp"
                     android:contentDescription="@string/barcode"
                     android:scaleType="fitXY"
-                    tools:srcCompat="@drawable/ic_barcode_example" />
+                    android:src="@drawable/ic_barcode_example" />
 
                 <TextView
                     android:id="@+id/txtProductName"
@@ -75,6 +76,215 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/productDesLorem" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:drawablePadding="8dp"
+                    android:text="@string/date_time"
+                    android:textColor="@color/navy_blue"
+                    android:textSize="16sp"
+                    app:drawableStartCompat="@drawable/ic_round_date_range_24"
+                    app:drawableTint="@color/navy_blue" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/txtScanDate"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/txtScanTime"
+                        android:textAlignment="textEnd"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtScanDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/txtScanDate"
+                        android:textColor="@color/navy_blue"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/txtScanTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/txtScanTime"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/navy_blue"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:drawablePadding="8dp"
+                    android:text="@string/description"
+                    android:textColor="@color/navy_blue"
+                    android:textSize="16sp"
+                    app:drawableStartCompat="@drawable/ic_round_description_24"
+                    app:drawableTint="@color/navy_blue" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/txt_class"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/product"
+                        android:textAlignment="textEnd"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtClass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/txt_class"
+                        android:textColor="@color/navy_blue" />
+
+                    <TextView
+                        android:id="@+id/txtProduct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/product"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/navy_blue" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/vendor"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/cross_reference"
+                        android:textAlignment="textEnd"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtVendor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/vendor"
+                        android:textColor="@color/navy_blue" />
+
+                    <TextView
+                        android:id="@+id/txtCrossReference"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/cross_reference"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/navy_blue" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="?android:attr/listDivider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtBtnBack"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/back"
+                        android:textAlignment="center"
+                        android:textColor="@color/yellow"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/txtBtnEdit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_bg_btn"
+                        android:gravity="center"
+                        android:text="@string/edit"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

@@ -9,4 +9,14 @@
     <string name="barcode">Barcode</string>
     <string name="productName">Product Name</string>
     <string name="productDesLorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="date_time">Date/Time</string>
+    <string name="txtScanDate">Scan Date</string>
+    <string name="txtScanTime">Scan Time</string>
+    <string name="back">Back</string>
+    <string name="edit">Edit</string>
+    <string name="description">Description</string>
+    <string name="txt_class">Class</string>
+    <string name="product">Product</string>
+    <string name="vendor">Vendor</string>
+    <string name="cross_reference">Cross Reference</string>
 </resources>

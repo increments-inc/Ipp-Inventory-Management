@@ -19,4 +19,9 @@
         android:name="com.incrementsinc.ipp_inventory_management.landing.StorageFragment"
         android:label="fragment_storage"
         tools:layout="@layout/fragment_storage" />
+    <fragment
+        android:id="@+id/itemDetailsFragment"
+        android:name="com.incrementsinc.ipp_inventory_management.landing.ItemDetailsFragment"
+        android:label="fragment_item_details"
+        tools:layout="@layout/fragment_item_details" />
 </navigation>

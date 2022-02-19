@@ -39,6 +39,8 @@
         android:clickable="true"
         android:contentDescription="@string/des_scanner"
         android:focusable="true"
+        app:fabSize="auto"
         app:layout_anchor="@id/bottomAppBar"
+        app:maxImageSize="36dp"
         app:srcCompat="@drawable/barcode_scanner" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
