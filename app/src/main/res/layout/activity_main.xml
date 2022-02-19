@@ -15,6 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="?attr/actionBarSize"
         app:navGraph="@navigation/landing_page_navigation" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
@@ -23,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="bottom"
-        app:fabAlignmentMode="center"
+        app:fabAlignmentMode="end"
         app:fabAnimationMode="scale"
         app:fabCradleRoundedCornerRadius="24dp"
         app:layout_constraintBottom_toBottomOf="parent"

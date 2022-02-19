@@ -6,6 +6,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -34,11 +35,23 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        mBottomAppBar.setOnMenuItemClickListener(item -> {
+            if(item.getItemId() == R.id.bm_storage){
+                mNavController.navigate(R.id.storageFragment);
+            }else {
+                mNavController.navigate(R.id.homeFragment);
+            }
+            return false;
+        });
+        mBottomAppBar.setNavigationOnClickListener(view -> {
+            mNavController.navigate(R.id.historyFragment);
+        });
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        mNavController.navigate(R.id.historyFragment);
+        mNavController.navigate(R.id.homeFragment);
     }
 }

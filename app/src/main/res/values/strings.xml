@@ -19,4 +19,6 @@
     <string name="product">Product</string>
     <string name="vendor">Vendor</string>
     <string name="cross_reference">Cross Reference</string>
+    <string name="add">Add</string>
+    <string name="home">Home</string>
 </resources>
