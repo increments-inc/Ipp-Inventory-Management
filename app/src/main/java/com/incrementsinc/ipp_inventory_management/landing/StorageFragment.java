@@ -31,7 +31,7 @@ public class StorageFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mRecyclerView = mStorageBinding.mRecyclerView;
+        mRecyclerView = mStorageBinding.itemRecyclerView;
         mRecyclerView.setHasFixedSize(false);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mAdapter = new StorageListAdapter(getContext());
