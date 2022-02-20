@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.incrementsinc.ipp_inventory_management.adapters.StorageListAdapter;
+import com.incrementsinc.ipp_inventory_management.adapter.StorageListAdapter;
 import com.incrementsinc.ipp_inventory_management.databinding.FragmentStorageBinding;
 
 public class StorageFragment extends Fragment {

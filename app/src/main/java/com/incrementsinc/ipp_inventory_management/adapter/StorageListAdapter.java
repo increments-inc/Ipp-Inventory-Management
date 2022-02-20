@@ -1,4 +1,4 @@
-package com.incrementsinc.ipp_inventory_management.adapters;
+package com.incrementsinc.ipp_inventory_management.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
