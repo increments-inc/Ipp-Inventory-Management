@@ -9,6 +9,7 @@
         <entry key="..\:/IppInventoryManagement/app/src/main/res/layout/fragment_history.xml" value="0.36666666666666664" />
         <entry key="..\:/IppInventoryManagement/app/src/main/res/layout/fragment_home.xml" value="0.36102564102564105" />
         <entry key="..\:/IppInventoryManagement/app/src/main/res/layout/fragment_item_details.xml" value="0.36102564102564105" />
+        <entry key="..\:/IppInventoryManagement/app/src/main/res/layout/fragment_manual_seed.xml" value="0.33" />
         <entry key="..\:/IppInventoryManagement/app/src/main/res/layout/fragment_storage.xml" value="0.36666666666666664" />
         <entry key="..\:/IppInventoryManagement/app/src/main/res/layout/item_product.xml" value="0.36102564102564105" />
         <entry key="..\:/IppInventoryManagement/app/src/main/res/menu/bottom_nav_menu.xml" value="1.4714285714285715" />
@@ -23,7 +24,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
