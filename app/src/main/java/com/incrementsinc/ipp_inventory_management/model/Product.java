@@ -1,4 +1,4 @@
-package com.incrementsinc.ipp_inventory_management.models;
+package com.incrementsinc.ipp_inventory_management.model;
 
 public class Product {
     private int id;
