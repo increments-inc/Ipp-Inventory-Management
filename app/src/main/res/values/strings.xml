@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">IPP Inventory Management</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="bm_history">History</string>
     <string name="bm_storage">Storage</string>
     <string name="des_scanner">Barcode Scanner to Find Item</string>
     <string name="home_page_hint">Press scan button to start scanning</string>
@@ -22,4 +20,8 @@
     <string name="add">Add</string>
     <string name="home">Home</string>
     <string name="manual_seed">Manual Seed</string>
+    <string name="class_id">Class</string>
+    <string name="product_id">Product</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
 </resources>
