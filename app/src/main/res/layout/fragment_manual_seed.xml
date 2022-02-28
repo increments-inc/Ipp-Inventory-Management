@@ -18,33 +18,44 @@
             android:textSize="24sp"
             android:textColor="@color/black"/>
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_class"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="@string/class_id">
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pro_class"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:imeOptions="actionNext"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_product"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="@string/product_id">
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pro_product"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:imeOptions="actionNext"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="@string/description">
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pro_description"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="start"
-                android:minLines="7"/>
+                android:minLines="7"
+                android:imeOptions="actionNext"/>
         </com.google.android.material.textfield.TextInputLayout>
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -68,37 +79,48 @@
                     android:layout_marginTop="8dp"
                     android:orientation="horizontal">
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ti_cross_ref_1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="@string/reference_01">
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/pro_cross_ref_1"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"/>
+                            android:layout_height="match_parent"
+                            android:inputType="number"
+                            android:imeOptions="actionNext"/>
                     </com.google.android.material.textfield.TextInputLayout>
                     <View
                         android:layout_width="8dp"
                         android:layout_height="wrap_content"/>
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ti_cross_ref_2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="@string/reference_02">
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/pro_cross_ref_2"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"/>
+                            android:layout_height="match_parent"
+                            android:inputType="number"
+                            android:imeOptions="actionNext"/>
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_vendor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:hint="@string/vendor">
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pro_vendor"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:imeOptions="actionDone"/>
         </com.google.android.material.textfield.TextInputLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -107,11 +129,13 @@
             android:layout_marginTop="16dp"
             android:gravity="end">
             <Button
+                android:id="@+id/btn_submit"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="@string/submit"
                 android:background="@drawable/rounded_bg_btn"/>
             <TextView
+                android:id="@+id/btn_cancel"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="@string/cancel"
