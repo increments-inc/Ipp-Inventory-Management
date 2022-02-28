@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.incrementsinc.ipp_inventory_management.adapter.StorageListAdapter;
+import com.incrementsinc.ipp_inventory_management.database.ProductDB;
 import com.incrementsinc.ipp_inventory_management.databinding.FragmentStorageBinding;
 
 public class StorageFragment extends Fragment {
@@ -35,6 +36,10 @@ public class StorageFragment extends Fragment {
         mRecyclerView.setHasFixedSize(false);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mAdapter = new StorageListAdapter(getContext());
+        ProductDB db = new ProductDB(getContext());
+        mAdapter.setProducts(db.selectRecords());
         mRecyclerView.setAdapter(mAdapter);
+
+
     }
 }

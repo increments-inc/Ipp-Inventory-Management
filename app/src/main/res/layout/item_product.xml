@@ -44,19 +44,7 @@
                 app:layout_constraintTop_toTopOf="@+id/imgProduct" />
 
             <TextView
-                android:id="@+id/textView3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="4dp"
-                android:text="@string/product"
-                android:textColor="@color/blue"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imgProduct"
-                app:layout_constraintTop_toBottomOf="@+id/txtProductName" />
-
-            <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/txtCrossRef1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -65,10 +53,22 @@
                 android:textColor="@color/blue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgProduct"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                app:layout_constraintTop_toBottomOf="@+id/txtProductName" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/txtCrossRef2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/cross_reference"
+                android:textColor="@color/blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgProduct"
+                app:layout_constraintTop_toBottomOf="@+id/txtCrossRef1" />
+
+            <TextView
+                android:id="@+id/txtDateTime"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"

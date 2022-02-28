@@ -120,9 +120,8 @@ public class ManualSeedFragment extends Fragment implements View.OnClickListener
 
     @Override
     public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-        if(i == EditorInfo.IME_ACTION_DONE){
+        if(i == EditorInfo.IME_ACTION_GO){
             onSubmit();
-            return true;
         }
         return false;
     }
