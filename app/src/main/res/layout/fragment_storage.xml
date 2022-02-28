@@ -8,6 +8,7 @@
     android:background="@color/background"
     tools:context=".landing.StorageFragment">
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_bar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:menu="@menu/storage_toolbar_menu"

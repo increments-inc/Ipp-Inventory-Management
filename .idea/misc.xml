@@ -18,13 +18,14 @@
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.38958333333333334" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.38958333333333334" />
         <entry key="app/src/main/res/layout/fragment_item_details.xml" value="0.38958333333333334" />
+        <entry key="app/src/main/res/layout/fragment_manual_seed.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_storage.xml" value="0.38958333333333334" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.38958333333333334" />
         <entry key="app/src/main/res/menu/storage_toolbar_menu.xml" value="0.38958333333333334" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
