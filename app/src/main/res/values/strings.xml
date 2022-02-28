@@ -24,4 +24,6 @@
     <string name="product_id">Product</string>
     <string name="submit">Submit</string>
     <string name="cancel">Cancel</string>
+    <string name="reference_01">Reference 01</string>
+    <string name="reference_02">Reference 02</string>
 </resources>
