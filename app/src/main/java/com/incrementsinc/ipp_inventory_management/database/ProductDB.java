@@ -74,6 +74,7 @@ public class ProductDB {
                 } while (mCursor.moveToNext());
 
             }
+            mDatabase.close();
         }
         return products;
     }
