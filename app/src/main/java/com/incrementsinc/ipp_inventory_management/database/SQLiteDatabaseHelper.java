@@ -7,15 +7,15 @@ import android.util.Log;
 
 public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "barcode_db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     // Database creation sql statement
     private static final String DATABASE_CREATE = "create table product_table( " +
             "_id integer primary key autoincrement," +
-            "class text not null," +
+            "class text," +
             "product text not null," +
             "description text," +
-            "cross_ref_1 text not null," +
-            "cross_ref_2 text not null," +
+            "cross_ref_1 text," +
+            "cross_ref_2 text," +
             "vendor text," +
             "created_at text not null," +
             "updated_at text not null);";

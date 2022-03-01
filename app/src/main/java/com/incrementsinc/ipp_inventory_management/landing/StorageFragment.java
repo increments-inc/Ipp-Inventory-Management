@@ -1,13 +1,8 @@
 package com.incrementsinc.ipp_inventory_management.landing;
 
-import static android.app.Activity.RESULT_OK;
-
-import android.Manifest;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -30,12 +25,14 @@ import com.incrementsinc.ipp_inventory_management.R;
 import com.incrementsinc.ipp_inventory_management.adapter.StorageListAdapter;
 import com.incrementsinc.ipp_inventory_management.database.ProductDB;
 import com.incrementsinc.ipp_inventory_management.databinding.FragmentStorageBinding;
+import com.incrementsinc.ipp_inventory_management.model.Product;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class StorageFragment extends Fragment implements Toolbar.OnMenuItemClickListener {
     private static final int RESULT_CODE = 1001;
@@ -91,11 +88,11 @@ public class StorageFragment extends Fragment implements Toolbar.OnMenuItemClick
         switch (requestCode) {
             case PERMISSION_TO_READ_EXTERNAL_FILE:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Log.e("value", "Permission Granted, Now you can use local drive .");
-            } else {
-                Log.e("value", "Permission Denied, You cannot use local drive .");
-            }
-            break;
+                    Log.e("value", "Permission Granted, Now you can use local drive .");
+                } else {
+                    Log.e("value", "Permission Denied, You cannot use local drive .");
+                }
+                break;
         }
     }
 
@@ -104,33 +101,40 @@ public class StorageFragment extends Fragment implements Toolbar.OnMenuItemClick
         if (item.getItemId() == R.id.tbSearch) {
             actionSearch();
         } else {
-            String state = Environment.getExternalStorageState();
-            if(Environment.MEDIA_MOUNTED.equals(state)){
-                if(getReadPermission()){
-                    File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-                    if(dir.exists()){
-                        File file = new File(dir,"UPC.txt");
-                        FileOutputStream os = null;
-                        StringBuilder text = new StringBuilder();
-                        try {
-                            BufferedReader br = new BufferedReader(new FileReader(file));
-                            String line;
-                            while ((line = br.readLine()) != null) {
-                                text.append(line);
-                                text.append("\n");
-                            }
-                            br.close();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                        Log.d(TAG, "onActivityResult: inFile: " + text);
-                    }
-                }else{
-                    requestPermission();
-                }
-            }
+            actionReadRecordFromExternalStorage();
         }
         return true;
+    }
+
+    private void actionReadRecordFromExternalStorage() {
+        String state = Environment.getExternalStorageState();
+        ArrayList<Product> products = new ArrayList<>();
+
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            if (getReadPermission()) {
+                File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+                if (dir.exists()) {
+                    File file = new File(dir, "UPC.txt");
+                    FileOutputStream os = null;
+                    StringBuilder text = new StringBuilder();
+                    try {
+                        BufferedReader br = new BufferedReader(new FileReader(file));
+                        String line;
+                        while ((line = br.readLine()) != null) {
+                            text.append(line);
+                            text.append("\n");
+
+                        }
+                        br.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    Log.d(TAG, "onActivityResult: inFile: " + text);
+                }
+            } else {
+                requestPermission();
+            }
+        }
     }
 
     private void requestPermission() {
