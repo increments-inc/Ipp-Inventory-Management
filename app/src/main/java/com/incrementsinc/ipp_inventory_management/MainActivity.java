@@ -1,18 +1,24 @@
 package com.incrementsinc.ipp_inventory_management;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Toast;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentContainerView;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
-import android.os.Bundle;
-import android.view.View;
-
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 import com.incrementsinc.ipp_inventory_management.databinding.ActivityMainBinding;
 
+
 public class MainActivity extends AppCompatActivity {
+
     private NavController mNavController;
     private FragmentContainerView mFragmentContainer;
     private BottomAppBar mBottomAppBar;
@@ -32,20 +38,20 @@ public class MainActivity extends AppCompatActivity {
         //init settings
         mNavController = NavHostFragment.findNavController(mFragmentContainer.getFragment());
         mScannerButton.setOnClickListener(view -> {
-
+            new IntentIntegrator(this).initiateScan();
         });
 
         mBottomAppBar.setOnMenuItemClickListener(item -> {
             if(item.getItemId() == R.id.bm_storage){
                 mNavController.navigate(R.id.storageFragment);
-            }else {
-                mNavController.navigate(R.id.homeFragment);
             }
             return false;
         });
         mBottomAppBar.setNavigationOnClickListener(view -> {
-            mNavController.navigate(R.id.historyFragment);
+            mNavController.navigate(R.id.homeFragment);
         });
+
+
 
     }
 
@@ -53,5 +59,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         mNavController.navigate(R.id.homeFragment);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if(result != null){
+            if(result.getContents() != null){
+                Toast.makeText(this, "Code: "+result.getContents(), Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this, "Scan Cancelled!", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }

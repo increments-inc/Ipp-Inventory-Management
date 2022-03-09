@@ -40,10 +40,9 @@ public class StorageListAdapter extends RecyclerView.Adapter<StorageListAdapter.
     public void onBindViewHolder(@NonNull StorageListAdapter.ViewHolder holder, int position) {
         Product product = mProducts.get(position);
         holder.txtProduct.setText(product.getProduct());
-        holder.txtCrossRef1.setText(product.getCrossRef1());
-        holder.txtCrossRef2.setText(product.getCrossRef2());
+        holder.txtDescription.setText(product.getDescription());
 
-        @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm a");
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
         holder.txtDateTime.setText(dateFormat.format(new Date(Long.parseLong(product.getCreatedAt()))));
     }
 
@@ -57,14 +56,13 @@ public class StorageListAdapter extends RecyclerView.Adapter<StorageListAdapter.
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ItemProductBinding mItemProductBinding;
-        public TextView txtProduct, txtCrossRef1, txtCrossRef2, txtDateTime;
+        public TextView txtProduct, txtDateTime, txtDescription;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             mItemProductBinding = ItemProductBinding.bind(itemView);
             txtProduct = mItemProductBinding.txtProductName;
-            txtCrossRef1 = mItemProductBinding.txtCrossRef1;
-            txtCrossRef2 = mItemProductBinding.txtCrossRef2;
             txtDateTime = mItemProductBinding.txtDateTime;
+            txtDescription = mItemProductBinding.txtDescription;
         }
     }
 }

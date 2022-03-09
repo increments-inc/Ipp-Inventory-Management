@@ -33,8 +33,8 @@ public class ManualSeedFragment extends Fragment implements View.OnClickListener
         return mManualSeedBinding.getRoot();
     }
 
-    private TextInputLayout tiClass, tiProduct, tiDescription, tiCrossRef1, tiCrossRef2, tiVendor;
-    private EditText etClass, etProduct, etDescription, etCrossRef1, etCrossRef2, etVendor;
+    private TextInputLayout tiClass, tiProduct, tiDescription, tiCrossRef, tiVendor;
+    private EditText etClass, etProduct, etDescription, etCrossRef, etVendor;
     private Button btnSubmit;
     private TextView btnCancel;
 
@@ -50,11 +50,8 @@ public class ManualSeedFragment extends Fragment implements View.OnClickListener
         tiDescription = mManualSeedBinding.tiDescription;
         etDescription = mManualSeedBinding.proDescription;
 
-        tiCrossRef1 = mManualSeedBinding.tiCrossRef1;
-        etCrossRef1 = mManualSeedBinding.proCrossRef1;
-
-        tiCrossRef2 = mManualSeedBinding.tiCrossRef2;
-        etCrossRef2 = mManualSeedBinding.proCrossRef2;
+        tiCrossRef = mManualSeedBinding.tiCrossRef;
+        etCrossRef = mManualSeedBinding.proCrossRef;
 
         tiVendor = mManualSeedBinding.tiVendor;
         etVendor = mManualSeedBinding.proVendor;
@@ -93,16 +90,12 @@ public class ManualSeedFragment extends Fragment implements View.OnClickListener
             return;
         }
         product.setDescription(etDescription.getText().toString().trim());
-        product.setCrossRef1(etCrossRef1.getText().toString().trim());
-        if(TextUtils.isEmpty(product.getCrossRef1())){
-            tiCrossRef1.setError("Reference cannot be empty");
+        product.setCrossRef(etCrossRef.getText().toString().trim());
+        if(TextUtils.isEmpty(product.getCrossRef())){
+            tiCrossRef.setError("Reference cannot be empty");
             return;
         }
-        product.setCrossRef2(etCrossRef2.getText().toString().trim());
-        if(TextUtils.isEmpty(product.getCrossRef2())){
-            tiCrossRef2.setError("Reference cannot be empty");
-            return;
-        }
+
         product.setVendor(etVendor.getText().toString().trim());
 
         setRecordsToDatabase(product);
@@ -110,9 +103,14 @@ public class ManualSeedFragment extends Fragment implements View.OnClickListener
 
     private void setRecordsToDatabase(Product product) {
         ProductDB db = new ProductDB(getContext());
-        long report = db.createRecords(product.getpClass(), product.getProduct(), product.getDescription(), product.getCrossRef1(), product.getCrossRef2(), product.getVendor());
+        long report = db.createRecords(product.getpClass(), product.getProduct(), product.getDescription(), product.getCrossRef(), product.getVendor());
         if(report != -1){
             Toast.makeText(getContext(), "Manual Seeding Successful!", Toast.LENGTH_SHORT).show();
+            etClass.setText(null);
+            etProduct.setText(null);
+            etDescription.setText(null);
+            etCrossRef.setText(null);
+            etVendor.setText(null);
             return;
         }
         Toast.makeText(getContext(), "Error! Try again later.", Toast.LENGTH_SHORT).show();

@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:imeOptions="actionNext"
-                android:inputType="number" />
+                android:inputType="textPhonetic" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -48,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:imeOptions="actionNext"
-                android:inputType="number" />
+                android:inputType="textPhonetic" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -62,73 +62,24 @@
                 android:id="@+id/pro_description"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="start"
                 android:imeOptions="actionNext"
-                android:inputType="textMultiLine"
-                android:minLines="7" />
+                android:inputType="textPhonetic" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_cross_ref"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="1dp"
-            app:contentPadding="8dp">
+            android:hint="@string/cross_reference">
 
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pro_cross_ref"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cross_reference"
-                    android:textSize="18sp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/ti_cross_ref_1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="@string/reference_01">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/pro_cross_ref_1"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:imeOptions="actionNext"
-                            android:inputType="number" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <View
-                        android:layout_width="8dp"
-                        android:layout_height="wrap_content" />
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/ti_cross_ref_2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="@string/reference_02">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/pro_cross_ref_2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:imeOptions="actionNext"
-                            android:inputType="number" />
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                android:layout_height="match_parent"
+                android:imeOptions="actionNext"
+                android:inputType="textPhonetic" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/ti_vendor"
@@ -142,7 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:imeOptions="actionGo"
-                android:inputType="text" />
+                android:inputType="textPhonetic" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
@@ -154,14 +105,14 @@
 
             <Button
                 android:id="@+id/btn_submit"
-                android:layout_width="100dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_bg_btn"
                 android:text="@string/submit" />
 
             <TextView
                 android:id="@+id/btn_cancel"
-                android:layout_width="100dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:focusable="true"

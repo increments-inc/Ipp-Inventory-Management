@@ -5,8 +5,7 @@ public class Product {
     private String pClass;
     private String product;
     private String description;
-    private String crossRef1;
-    private String crossRef2;
+    private String crossRef;
     private String vendor;
     private String createdAt;
     private String updatedAt;
@@ -16,13 +15,12 @@ public class Product {
     }
 
     // this constructor will use to get all the value for the product from the database
-    public Product(int id, String pClass, String product, String description, String crossRef1, String crossRef2, String vendor, String createdAt, String updatedAt) {
+    public Product(int id, String pClass, String product, String description, String crossRef, String vendor, String createdAt, String updatedAt) {
         this.id = id;
         this.pClass = pClass;
         this.product = product;
         this.description = description;
-        this.crossRef1 = crossRef1;
-        this.crossRef2 = crossRef2;
+        this.crossRef = crossRef;
         this.vendor = vendor;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
@@ -60,20 +58,12 @@ public class Product {
         this.description = description;
     }
 
-    public String getCrossRef1() {
-        return crossRef1;
+    public String getCrossRef() {
+        return crossRef;
     }
 
-    public void setCrossRef1(String crossRef1) {
-        this.crossRef1 = crossRef1;
-    }
-
-    public String getCrossRef2() {
-        return crossRef2;
-    }
-
-    public void setCrossRef2(String crossRef2) {
-        this.crossRef2 = crossRef2;
+    public void setCrossRef(String crossRef) {
+        this.crossRef = crossRef;
     }
 
     public String getVendor() {

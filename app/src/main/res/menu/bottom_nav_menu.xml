@@ -3,11 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/bm_home"
-        android:icon="@drawable/ic_round_home_36"
-        android:title="@string/home"
-        app:showAsAction="ifRoom" />
-    <item
         android:id="@+id/bm_storage"
         android:icon="@drawable/ic_round_storage_36"
         android:title="@string/bm_storage"

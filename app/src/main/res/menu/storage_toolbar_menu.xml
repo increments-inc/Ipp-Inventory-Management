@@ -8,9 +8,4 @@
         android:title="Search"
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/tbUpload"
-        android:icon="@drawable/ic_outline_drive_folder_upload_24"
-        android:title="@string/bm_storage"
-        app:showAsAction="ifRoom" />
 </menu>

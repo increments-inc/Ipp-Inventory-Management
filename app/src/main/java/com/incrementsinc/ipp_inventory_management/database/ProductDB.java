@@ -16,8 +16,7 @@ public class ProductDB {
     private static final String PRO_CLASS = "class";
     private static final String PRO_PRODUCT = "product";
     private static final String PRO_DESCRIPTION = "description";
-    private static final String PRO_CROSS_REF_1 = "cross_ref_1";
-    private static final String PRO_CROSS_REF_2 = "cross_ref_2";
+    private static final String PRO_CROSS_REF = "cross_ref";
     private static final String PRO_VENDOR = "vendor";
     private static final String PRO_CREATED_AT = "created_at";
     private static final String PRO_UPDATED_AT = "updated_at";
@@ -31,13 +30,12 @@ public class ProductDB {
         mToday = String.valueOf(System.currentTimeMillis());
     }
 
-    public long createRecords(String pClass, String product, String description, String crossRef1, String crossRef2, String vendor){
+    public long createRecords(String pClass, String product, String description, String crossRef, String vendor){
         ContentValues values = new ContentValues();
         values.put(PRO_CLASS, pClass);
         values.put(PRO_PRODUCT, product);
         values.put(PRO_DESCRIPTION, description);
-        values.put(PRO_CROSS_REF_1, crossRef1);
-        values.put(PRO_CROSS_REF_2, crossRef2);
+        values.put(PRO_CROSS_REF, crossRef);
         values.put(PRO_VENDOR, vendor);
         values.put(PRO_CREATED_AT, mToday);
         values.put(PRO_UPDATED_AT, mToday);
@@ -47,7 +45,7 @@ public class ProductDB {
     @SuppressLint("Range")
     public ArrayList<Product> selectRecords() {
         ArrayList<Product> products = new ArrayList<>();
-        String[] cols = new String[]{PRO_ID, PRO_CLASS, PRO_PRODUCT, PRO_DESCRIPTION, PRO_CROSS_REF_1, PRO_CROSS_REF_2, PRO_VENDOR, PRO_CREATED_AT, PRO_UPDATED_AT};
+        String[] cols = new String[]{PRO_ID, PRO_CLASS, PRO_PRODUCT, PRO_DESCRIPTION, PRO_CROSS_REF, PRO_VENDOR, PRO_CREATED_AT, PRO_UPDATED_AT};
         try (Cursor mCursor = mDatabase.query(
                 true,
                 PRO_TABLE,
@@ -68,8 +66,7 @@ public class ProductDB {
                             mCursor.getString(mCursor.getColumnIndex(cols[4])),
                             mCursor.getString(mCursor.getColumnIndex(cols[5])),
                             mCursor.getString(mCursor.getColumnIndex(cols[6])),
-                            mCursor.getString(mCursor.getColumnIndex(cols[7])),
-                            mCursor.getString(mCursor.getColumnIndex(cols[8]))
+                            mCursor.getString(mCursor.getColumnIndex(cols[7]))
                     ));
                 } while (mCursor.moveToNext());
 
