@@ -23,7 +23,7 @@
         <entry key="app/src/main/res/layout/fragment_manual_seed.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_storage.xml" value="0.38958333333333334" />
         <entry key="app/src/main/res/layout/gatt_services_characteristics.xml" value="0.29128205128205126" />
-        <entry key="app/src/main/res/layout/item_product.xml" value="0.25848083496093754" />
+        <entry key="app/src/main/res/layout/item_product.xml" value="0.1" />
         <entry key="app/src/main/res/layout/listitem_device.xml" value="0.29128205128205126" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.38958333333333334" />
         <entry key="app/src/main/res/menu/gatt_services.xml" value="0.29128205128205126" />

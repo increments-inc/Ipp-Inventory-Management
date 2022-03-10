@@ -1,15 +1,16 @@
 package com.incrementsinc.ipp_inventory_management.landing;
 
-import android.app.SearchManager;
-import android.widget.SearchView;
-import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.widget.SearchView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,7 +25,8 @@ import com.incrementsinc.ipp_inventory_management.adapter.StorageListAdapter;
 import com.incrementsinc.ipp_inventory_management.database.ProductDB;
 import com.incrementsinc.ipp_inventory_management.databinding.FragmentStorageBinding;
 
-public class StorageFragment extends Fragment implements Toolbar.OnMenuItemClickListener {
+public class StorageFragment extends Fragment{
+    private static final String TAG = StorageFragment.class.getSimpleName();
     private FragmentStorageBinding mStorageBinding;
     private RecyclerView mRecyclerView;
     private StorageListAdapter mAdapter;
@@ -54,21 +56,6 @@ public class StorageFragment extends Fragment implements Toolbar.OnMenuItemClick
         mAdapter.setProducts(db.selectRecords());
         mRecyclerView.setAdapter(mAdapter);
 
-        mToolbar.setOnMenuItemClickListener(this);
-
-    }
-
-    private void actionSearch() {
-
-    }
-
-
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        if (item.getItemId() == R.id.tbSearch) {
-            actionSearch();
-        }
-        return true;
     }
 
     @Override
@@ -76,8 +63,22 @@ public class StorageFragment extends Fragment implements Toolbar.OnMenuItemClick
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.storage_toolbar_menu, menu);
 
-        SearchManager searchManager = (SearchManager) requireActivity().getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) menu.findItem(R.id.tbSearch).getActionView();
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(this.requireActivity().getComponentName()));
+        searchView.setImeOptions(EditorInfo.IME_ACTION_SEARCH);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                Log.d(TAG, "onQueryTextSubmit: "+s);
+                mAdapter.getFilter().filter(s);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                Log.d(TAG, "onQueryTextChange: "+s);
+                mAdapter.getFilter().filter(s);
+                return false;
+            }
+        });
     }
 }

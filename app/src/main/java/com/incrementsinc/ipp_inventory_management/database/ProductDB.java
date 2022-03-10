@@ -46,7 +46,7 @@ public class ProductDB {
     public ArrayList<Product> selectRecords() {
         ArrayList<Product> products = new ArrayList<>();
         String[] cols = new String[]{PRO_ID, PRO_CLASS, PRO_PRODUCT, PRO_DESCRIPTION, PRO_CROSS_REF, PRO_VENDOR, PRO_CREATED_AT, PRO_UPDATED_AT};
-        try (Cursor mCursor = mDatabase.query(
+        try (Cursor cursor = mDatabase.query(
                 true,
                 PRO_TABLE,
                 cols,
@@ -56,23 +56,59 @@ public class ProductDB {
                 null,
                 null,
                 null)) {
-            if (mCursor.moveToFirst()) {
+            if (cursor.moveToFirst()) {
                 do {
                     products.add(new Product(
-                            mCursor.getInt(mCursor.getColumnIndex(cols[0])),
-                            mCursor.getString(mCursor.getColumnIndex(cols[1])),
-                            mCursor.getString(mCursor.getColumnIndex(cols[2])),
-                            mCursor.getString(mCursor.getColumnIndex(cols[3])),
-                            mCursor.getString(mCursor.getColumnIndex(cols[4])),
-                            mCursor.getString(mCursor.getColumnIndex(cols[5])),
-                            mCursor.getString(mCursor.getColumnIndex(cols[6])),
-                            mCursor.getString(mCursor.getColumnIndex(cols[7]))
+                            cursor.getInt(cursor.getColumnIndex(cols[0])),
+                            cursor.getString(cursor.getColumnIndex(cols[1])),
+                            cursor.getString(cursor.getColumnIndex(cols[2])),
+                            cursor.getString(cursor.getColumnIndex(cols[3])),
+                            cursor.getString(cursor.getColumnIndex(cols[4])),
+                            cursor.getString(cursor.getColumnIndex(cols[5])),
+                            cursor.getString(cursor.getColumnIndex(cols[6])),
+                            cursor.getString(cursor.getColumnIndex(cols[7]))
                     ));
-                } while (mCursor.moveToNext());
+                } while (cursor.moveToNext());
 
             }
             mDatabase.close();
         }
         return products;
     }
+
+    @SuppressLint("Range")
+    public Product selectRecord(String productCode){
+        Product product = new Product();
+        String[] cols = new String[]{PRO_ID, PRO_CLASS, PRO_PRODUCT, PRO_DESCRIPTION, PRO_CROSS_REF, PRO_VENDOR, PRO_CREATED_AT, PRO_UPDATED_AT};
+        try (Cursor cursor = mDatabase.query(
+                true,
+                PRO_TABLE,
+                cols,
+                cols[2]+"=?",
+                new String[]{null, null, (productCode), null, null, null, null, null},
+                null,
+                null,
+                null,
+                null
+                )){
+            if(cursor.moveToFirst()){
+                do {
+                    product = new Product(
+                            cursor.getInt(cursor.getColumnIndex(cols[0])),
+                            cursor.getString(cursor.getColumnIndex(cols[1])),
+                            cursor.getString(cursor.getColumnIndex(cols[2])),
+                            cursor.getString(cursor.getColumnIndex(cols[3])),
+                            cursor.getString(cursor.getColumnIndex(cols[4])),
+                            cursor.getString(cursor.getColumnIndex(cols[5])),
+                            cursor.getString(cursor.getColumnIndex(cols[6])),
+                            cursor.getString(cursor.getColumnIndex(cols[7]))
+                    );
+                } while (cursor.moveToNext());
+            }
+            mDatabase.close();
+        }
+        return product;
+    }
+
+
 }

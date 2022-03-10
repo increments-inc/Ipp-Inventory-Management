@@ -47,7 +47,6 @@
                 android:id="@+id/txtDescription"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:lines="2"
                 android:maxLines="2"
                 android:text="@string/description"
                 android:textColor="@color/black"
